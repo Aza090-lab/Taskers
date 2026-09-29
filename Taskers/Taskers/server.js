@@ -7,5 +7,5 @@
 
  //FLUXO
  app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor em http://localhost:3000/`);
  });
