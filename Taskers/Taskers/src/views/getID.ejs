@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>All Tasks</title>
+</head>
+<body>
+    
+    <h1>Tarefa:</h1>
+    <ul>
+        <% if (task !== null){ %>
+            <li>
+                <%= task.id %> - <%= task.title %> - <%= task.completed %>
+            </li>
+        <% } else {%>
+                <p>Tarefa não encontrada!</p>  
+        <% } %>
+    </ul>
+    
+    
+</body>
+</html>

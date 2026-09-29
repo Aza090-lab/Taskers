@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>All Tasks</title>
+</head>
+<body>
+    
+    <h1>Tarefas:</h1>
+    <ul>
+        <% tasks.forEach(t => { %>
+            <li>
+                <%= t.id %> - <%= t.title %> - <%= t.completed %>
+            </li>
+        <% }) %>
+    </ul>
+    
+    
+</body>
+</html>

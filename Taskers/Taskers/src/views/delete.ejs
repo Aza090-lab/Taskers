@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task</title>
+</head>
+<body>
+    
+    <h1>Tarefa deletada:</h1>
+    <ul>
+        <% if (deletedTask !== null){ %>
+            <li>
+                <%= deletedTask.id %> - <%= deletedTask.title %> - <%= deletedTask.completed %>
+            </li>
+        <% } else {%>
+                <p>Tarefa não encontrada!</p>  
+        <% } %>
+    </ul>
+    
+    
+</body>
+</html>
