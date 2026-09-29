@@ -1,55 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Exemplo EJS</title>
-</head>
-<body>
+<%- include('partials/head') %> 
+    <%- include('partials/navbar') %> 
     
-    <h1>Hello, <%= nome %>!</h1>
+    <h1>
+        Home
+    </h1>
 
-
-
-    <!--Forms-->
-    <h2>GET - Mostrar todas as Tarefas</h2>
-    <form action="/tasks" method="GET">
-        <button type="submit">Mostrar</button>
-    </form>
-
-    
-
-    <h2>GET - Buscar por Tarefas(ID)</h2>
-    <form action="/tasks/task" method="GET">
-        ID <input type="text" name="id">
-        <button type="submit">Buscar</button>
-    </form>
-
-
-
-    <h2>DELETE - Deleta uma Tarefa</h2>
-    <form action="/tasks/delete" method="GET">
-        ID <input type="text" name="id">
-        <button type="submit">Buscar</button>
-    </form>
-
-
-
-    <h2>CREATE - Cria uma Tarefa</h2>
-    <form action="/tasks/create" method="POST">
-        ID <input type="text" name="id">
-        Título <input type="text" name="title">
-    <button type="submit">Buscar</button>
-    </form>
-
-
-
-    <h2>Edit - Edita uma Tarefa</h2>
-    <form action="/tasks/edit" method="GET">
-        ID <input type="text" name="id">
-        Título <input type="text" name="title">
-        Status <input type="text" name="completed">
-        <button type="submit">Buscar</button>
-  </form>
-
-</body>
-</html>
+<%- include('partials/footer') %> 
