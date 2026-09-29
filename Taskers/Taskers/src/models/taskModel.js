@@ -48,6 +48,10 @@ const deleteTaskId = (id) => {
    return tasks.splice(Indice, 1)[0];
 }
 
+//ClearAllTasks => Limpar todas as Tasks
+const clearAllTasks = () => {
+   return taks = 0;
+}
 
 
 //EditTask => Modifica uma Task
@@ -75,6 +79,7 @@ module.exports = {
    getTaskId ,
    getCompleted ,
    deleteTaskId,
+   clearAllTasks,
    createTask,
    editTask
 }
