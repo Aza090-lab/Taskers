@@ -1,0 +1,30 @@
+-ORGANIZAÇÃO;
+<html>
+	header...
+	navbar...
+	content...
+	footer...
+<html>
+
+
+-"CSS + BootStrap";
+
+
+-Tasks:
+-id -> ch.sprim;
+-nome;
+-concluído;
+
+
+-Requisitos:
+-setar concluído;
+-criar;
+-alterar;
+-remover;
+-limpar tudo;
+-listar;
+-filtrar(completas e incompletas);
+
+
+NÃO PODE UTILIZAR O ID COMO BASE(PRO USUARIO)!!!
+
