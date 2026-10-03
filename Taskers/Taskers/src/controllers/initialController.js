@@ -1,17 +1,17 @@
  //====VARIAVEIS====
- const taskModel = require('../models/taskModel');
+ //const taskModel = require('../models/taskModel');
 
 //====FUNÇÕES====
 const paginaInicial = (req, res) => {
-    //res.render("home", {nome: "Moto"});
+    res.render("home copy", {nome: "Moto"});
 
-    const tasks = taskModel.getAllTasks();
+    //const tasks = taskModel.getAllTasks();
     
-    if (tasks.length == 0) {
-        res.render("allTasks",{tasks : "Nenhuma Task foi encontrada!"});
-    }
+    //if (tasks.length == 0) {
+    //    res.render("allTasks",{tasks : "Nenhuma Task foi encontrada!"});
+    //}
 
-    res.status(200).render("home", {tasks});
+    //res.status(200).render("home", {tasks});
 };
 
 

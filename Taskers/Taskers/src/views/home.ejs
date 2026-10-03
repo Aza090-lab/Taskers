@@ -2,18 +2,20 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %> 
     
-    <h1>
-        Home
-    </h1>
+    <main>
+        <h2>Tarefas</h2>
 
-
-    <h1>Tarefas:</h1>
-    <ul>
+        <div id="DisplayTasks">
         <% tasks.forEach(t => { %>
-            <li>
-                <%= t.id %> - <%= t.title %> - <%= t.completed %>
-            </li>
+            <div>
+                <li><ul>
+                    <h3><%= t.title %></h3>
+                    <p><%= t.completed %></p>
+                    <button>Editar</button> <button>Deletar</button>
+                </ul></li>
+            </div>
         <% }) %>
-    </ul>
+        </div>
+    </main>
 
 <%- include('partials/footer') %> 
