@@ -1,8 +1,19 @@
 <%- include('partials/head') %> 
-    <%- include('partials/navbar') %> 
+<%- include('partials/header') %>
+<%- include('partials/navbar') %> 
     
     <h1>
         Home
     </h1>
+
+
+    <h1>Tarefas:</h1>
+    <ul>
+        <% tasks.forEach(t => { %>
+            <li>
+                <%= t.id %> - <%= t.title %> - <%= t.completed %>
+            </li>
+        <% }) %>
+    </ul>
 
 <%- include('partials/footer') %> 

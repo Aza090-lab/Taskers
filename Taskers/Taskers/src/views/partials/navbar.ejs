@@ -1,14 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <h1>Taskers</h1>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <!--<a class="nav-item nav-link active" href="/">Home </span></a>-->
+        <div class="navbar-nav"   style="display: inline-flex;">
+
             <div>
-                <input type="text" name="title">
-                <button type="submit">listar</button>
-                <a class="nav-item nav-link" href="/createtask">+</a>
+                <button id="ConfirmSearchTask">🔍</button>
+                <input type="search" id="SearchTask">
+
+                <select id="SearchTaskOptions">
+                    <option>Tudo</option>
+                    <option>Concluidas</option>
+                    <option>Não Concluidas</option>
+                </select>
             </div>
-            <a class="nav-item nav-link" href="/delete">limpar tudo</a>
+
+            <div>
+                <button>Nova Tarefa</button>
+            </div>
             
         </div>
     </div>
