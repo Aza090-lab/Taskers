@@ -2,7 +2,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav"   style="display: inline-flex;">
 
-            <div>
+            <!--<div>
                 <button id="ConfirmSearchTask">🔍</button>
                 <input type="search" id="SearchTask">
 
@@ -11,12 +11,12 @@
                     <option>Concluidas</option>
                     <option>Não Concluidas</option>
                 </select>
-            </div>
+            </div>-->
 
-            <div>
-                <button> | Home | </button>
-                <button> | Listar Tarefas | </button>
-                <button> | Criar Tarefa | </button>
+            <div style="display: inline-flex;">
+                <form action="/" method="GET"> <button type="submit"> | Home | </button> </form>
+                <form action="/tasks" method="GET"> <button type="submit"> | Listar Tarefas | </button> </form>
+                <form action="/tasks/create" method="POST"> <button type="submit"> | Criar Tarefa | </button> </form>
             </div>
             
         </div>
