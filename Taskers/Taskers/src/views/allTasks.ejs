@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>All Tasks</title>
-</head>
+<%- include('partials/head') %> 
+
+<%- include('partials/header') %>
+<%- include('partials/navbar') %> 
+
 <body>
-    
-    <h1>Tarefas:</h1>
     <ul>
         <% tasks.forEach(t => { %>
             <li>
-                <%= t.id %> - <%= t.title %> - <%= t.completed %>
+                <h3><%= t.title %></h3>
+                <p><%= t.completed %></p>
             </li>
         <% }) %>
     </ul>
-    
-    
 </body>
-</html>
+
+<%- include('partials/footer') %> 

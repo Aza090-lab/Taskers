@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Delete Task</title>
-</head>
+<%- include('partials/head') %> 
+
+<%- include('partials/header') %>
+<%- include('partials/navbar') %> 
+
 <body>
-    
-    <h1>Tarefa deletada:</h1>
-    <ul>
-        <li>
-            <%= newTask.id %> - <%= newTask.title %> - <%= newTask.completed %>
-        </li>
-    </ul>
-    
-    
+    <form action="/tasks/create" method="POST">
+        ID <input type="text" name="id">
+        Título <input type="text" name="title">
+        <button type="submit">Confirmar</button>
+  </form>
 </body>
-</html>
+
+<%- include('partials/footer') %>

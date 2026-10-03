@@ -42,10 +42,16 @@ const getTaskCompleted = (req, res) => { //Lista tds as Tasks completas
 
 
 
+
+const createTaskMenu = (req, res) => {
+   req.body;
+   res.status(201).render("createTask");
+};
+
 const createTask = (req, res) => { //Cria um nv Task
    const newTask = taskModel.createTask(req.body);
    console.log(newTask);
-   res.status(201).render("createTask", {newTask});
+   res.status(201).render("home copy", {newTask});
 };
 
 
@@ -83,6 +89,7 @@ module.exports = {
    getTaskId,
    getTaskCompleted,
    deleteTaskId,
+   createTaskMenu,
    createTask,
    editTask
 };
