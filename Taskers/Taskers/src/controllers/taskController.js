@@ -59,17 +59,14 @@ const ClearAllTasks = (req, res) => {
    res.status(201).render("Tasks", {tasks}); 
 }
 
-const deleteTaskId = (req, res) => { //Deleta uma TAsk pelo ID
-   const { id } = req.body;
+const DeleteTaskId = (req, res) => { //Deleta uma TAsk pelo ID
+   const {id} = req.body;
 
-   const deletedTask = taskModel.deleteTaskId(id);
-   console.log(deletedTask);
+   taskModel.deleteTaskId(id);
+   const tasks = taskModel.getAllTasks();
 
-   if (!deletedTask) {
-        res.status(404).render("delete", {task : 'A Task não encontrada!'});
-    }
 
-   res.status(200).render("delete", {deletedTask});
+   res.status(201).render("Tasks", {tasks}); 
 }
 
 
@@ -95,7 +92,7 @@ module.exports = {
    OpenCreateTask,
    CreateTask,
    ClearAllTasks,
-   deleteTaskId,
+   DeleteTaskId,
    editTask
 };
  

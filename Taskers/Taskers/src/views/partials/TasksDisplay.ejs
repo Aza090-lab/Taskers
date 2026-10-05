@@ -3,7 +3,10 @@
         <li>
             <h3><%= t.title %></h3>
             <p><%= t.completed %></p>
-            <button>Editar</button>
+            <form action="/tasks/delete?_method=DELETE" method="POST" id=<%= t.id %>> 
+                <input type="text" name="id" style="display: none;"" value=<%= t.id %>>
+                <button type="submit" class="btn btn-outline-success"> Deletar </button> 
+            </form>
         </li>
     <% }) %>
 </ul>

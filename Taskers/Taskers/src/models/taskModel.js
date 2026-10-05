@@ -57,6 +57,8 @@ let tasks = [
     return newTask;
  };
 
+
+
 //ClearAllTasks => Limpar todas as Tasks
 const clearAllTasks = () => {
    tasks = []
@@ -67,7 +69,7 @@ const clearAllTasks = () => {
 const deleteTaskId = (id) => {
    const Indice = tasks.findIndex(task => task.id == id);
 
-   return tasks.splice(Indice, 1)[0];
+   tasks.splice(Indice, 1)[0];
 }
 
 
