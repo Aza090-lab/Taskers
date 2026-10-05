@@ -26,6 +26,13 @@ let tasks = [
 
 
 
+ //GetTasTitle => Busca pelo o title
+ const getTaskTitle = (title) => {
+   tasks.find(item => item.title === title)
+ };
+
+
+
  //CreateTask => Cria uma Task
  const createTask = (taskData) => {
     const newTask = {
@@ -81,5 +88,6 @@ module.exports = {
    deleteTaskId,
    clearAllTasks,
    createTask,
-   editTask
+   editTask,
+   getTaskTitle
 }
