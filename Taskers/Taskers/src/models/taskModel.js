@@ -32,7 +32,14 @@ let tasks = [
 
  //GetTasTitle => Busca pelo o title
  const getTaskTitle = (title) => {
-   tasks.find(item => item.title.includes(title))
+   let Result = [];
+   tasks.forEach(t => {
+      if (t.title.includes(title)){
+         Result.push(t);
+      }
+   });
+
+   return(Result);
  };
 
 

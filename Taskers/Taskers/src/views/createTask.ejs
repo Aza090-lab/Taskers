@@ -3,6 +3,8 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %> 
 
+<%- const taskController = require('../controllers/taskController'); %>
+
 <body>
     <form action="/tasks/create" method="POST">
         ID <input type="text" name="id">

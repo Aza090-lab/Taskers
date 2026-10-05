@@ -4,27 +4,14 @@
 
 
  //====FUNÇÕES====
- const getTaskBy = (req, res) => {
-    const type = 'title';
+ const getTask = (req, res) => {
+    const { title } = req.query;
+    const tasks = taskModel.getTaskTitle(title);
+
+    console.log(tasks)
 
 
-    if (type == 'id') {
-      const { id } = req.query;
-      const tasks = taskModel.getTaskBy(id);
-    }
-    if (type == 'title') {
-      const { title } = req.query;
-      const tasks = taskModel.getTaskTitle(title);
-      console.log(tasks)
-    }
-
-
-    if (!tasks) {
-        res.status(404).render("allTasks", {tasks : 'A Task não encontrada!'});
-    }
-
-
-    res.status(200).render("allTasks", {tasks});
+    res.status(200).render("GetTasks", {tasks});
  }
 
 
@@ -33,10 +20,10 @@
     const tasks = taskModel.getAllTasks();
 
     if (tasks.length == 0) {
-      res.render("allTasks",{tasks : "Nenhuma Task foi encontrada!"});
+      res.render("Tasks",{tasks : "Nenhuma Task foi encontrada!"});
     }
 
-    res.status(200).render("allTasks", {tasks});
+    res.status(200).render("Tasks", {tasks});
  };
 
 
@@ -97,7 +84,7 @@ const editTask = (req, res) => { //Edita uma Task pelo ID
 //====EXPORT====
 module.exports = {
    getAllTasks,
-   getTaskBy,
+   getTask,
    getTaskCompleted,
    deleteTaskId,
    createTaskMenu,

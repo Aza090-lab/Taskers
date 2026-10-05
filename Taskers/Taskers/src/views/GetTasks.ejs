@@ -1,0 +1,23 @@
+<%- include('partials/head') %> 
+
+<%- include('partials/header') %>
+<%- include('partials/navbar') %> 
+
+<body>
+    <form action="/tasks/task" method="GET"> 
+        <input type="text" name="title">
+        <button type="submit" class="btn btn-outline-success" > 🔍 </button> 
+    </form>
+    
+
+    <ul>
+        <% tasks.forEach(t => { %>
+            <li>
+                <h3><%= t.title %></h3>
+                <p><%= t.completed %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+
+<%- include('partials/footer') %> 
