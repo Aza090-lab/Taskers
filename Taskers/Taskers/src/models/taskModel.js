@@ -1,9 +1,13 @@
 //====MODELS / BDD====
 //BDD
 let tasks = [
- { id: 1, title: 'Estudar WEB', completed: 0},
- { id: 2, title: 'Revisar PBC', completed: 1},
- { id: 3, title: 'Estudar BD', completed: 0},
+ { id: 1, title: 'Estudar para WEB', completed: false},
+ { id: 2, title: 'Fazer Lista de Exercicios de FTAF', completed: false},
+ { id: 3, title: 'Estudar para BDD', completed: true},
+ { id: 4, title: 'Fazer Trabalho de Artes', completed: false},
+ { id: 5, title: 'Estudar para o Questionario de GEO', completed: true},
+ { id: 6, title: 'Economizar VR', completed: false},
+ { id: 7, title: 'Dar um ~Tiro (By: Bruno)', completed: true},
 ];
 
 
