@@ -5,20 +5,22 @@
 
  //====FUNÇÕES====
  const getTaskBy = (req, res) => {
-   const type = 'title';
+    const type = 'title';
+
 
     if (type == 'id') {
       const { id } = req.query;
-      const task = taskModel.getTaskBy(id);
+      const tasks = taskModel.getTaskBy(id);
     }
-    else if (type == 'title') {
+    if (type == 'title') {
       const { title } = req.query;
-      const task = taskModel.getTaskTitle(title);
+      const tasks = taskModel.getTaskTitle(title);
+      console.log(tasks)
     }
 
 
-    if (!task) {
-        res.status(404).render("allTasks", {task : 'A Task não encontrada!'});
+    if (!tasks) {
+        res.status(404).render("allTasks", {tasks : 'A Task não encontrada!'});
     }
 
 

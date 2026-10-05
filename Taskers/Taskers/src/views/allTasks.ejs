@@ -4,6 +4,9 @@
 <%- include('partials/navbar') %> 
 
 <body>
+    <form action="/tasks/task" method="GET"> <button type="submit" class="btn btn-outline-success" > 🔍 </button> </form>
+    <input type="search" id="SearchTask">
+
     <ul>
         <% tasks.forEach(t => { %>
             <li>

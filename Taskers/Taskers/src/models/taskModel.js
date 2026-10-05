@@ -32,7 +32,7 @@ let tasks = [
 
  //GetTasTitle => Busca pelo o title
  const getTaskTitle = (title) => {
-   tasks.find(item => item.title === title)
+   tasks.find(item => item.title.includes(title))
  };
 
 
