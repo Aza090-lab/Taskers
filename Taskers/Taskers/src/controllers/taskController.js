@@ -4,6 +4,7 @@
 
 
  //====FUNÇÕES====
+ //Tipos de busca
  const getTask = (req, res) => {
     const { title } = req.query;
     const tasks = taskModel.getTaskTitle(title);
@@ -19,9 +20,6 @@
  const getAllTasks = (req, res) => { //Lista tds as Tasks
     const tasks = taskModel.getAllTasks();
 
-    if (tasks.length == 0) {
-      res.render("Tasks",{tasks : "Nenhuma Task foi encontrada!"});
-    }
 
     res.status(200).render("Tasks", {tasks});
  };
@@ -40,16 +38,17 @@ const getTaskCompleted = (req, res) => { //Lista tds as Tasks completas
 
 
 
-
-const createTaskMenu = (req, res) => {
-   req.body;
-   res.status(201).render("createTask");
+//Criação, Modificação e Deletar
+const OpenCreateTask = (req, res) => {
+   res.status(201).render("CreateTask");
 };
 
-const createTask = (req, res) => { //Cria um nv Task
-   const newTask = taskModel.createTask(req.body);
-   console.log(newTask);
-   res.status(201).render("home copy", {newTask});
+const CreateTask = (req, res) => { //Cria um nv Task
+   taskModel.createTask(req.body);
+   const tasks = taskModel.getAllTasks();
+
+
+   res.status(201).render("Tasks", {tasks});
 };
 
 
@@ -83,12 +82,13 @@ const editTask = (req, res) => { //Edita uma Task pelo ID
 
 //====EXPORT====
 module.exports = {
-   getAllTasks,
    getTask,
+   getAllTasks,
    getTaskCompleted,
+
+   OpenCreateTask,
+   CreateTask,
    deleteTaskId,
-   createTaskMenu,
-   createTask,
    editTask
 };
  

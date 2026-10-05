@@ -9,8 +9,9 @@ const taskController = require('../controllers/taskController');
 router.get('/', taskController.getAllTasks);
 router.get('/task', taskController.getTask);
 router.get('/completed', taskController.getTaskCompleted );
-router.get('/createmenu', taskController.createTaskMenu);
-router.post('/create', taskController.createTask );
+
+router.get('/createmenu', taskController.OpenCreateTask);
+router.post('/create', taskController.CreateTask );
 router.delete('/delete', taskController.deleteTaskId);
 router.get('/edit', taskController.editTask);
 

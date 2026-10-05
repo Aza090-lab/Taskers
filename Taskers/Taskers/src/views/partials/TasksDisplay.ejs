@@ -1,0 +1,9 @@
+<ul>
+    <% tasks.forEach(t => { %>
+        <li>
+            <h3><%= t.title %></h3>
+            <p><%= t.completed %></p>
+            <button>Editar</button>
+        </li>
+    <% }) %>
+</ul>

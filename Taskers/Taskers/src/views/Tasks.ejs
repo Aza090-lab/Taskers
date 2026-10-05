@@ -10,14 +10,7 @@
     </form>
     
 
-    <ul>
-        <% tasks.forEach(t => { %>
-            <li>
-                <h3><%= t.title %></h3>
-                <p><%= t.completed %></p>
-            </li>
-        <% }) %>
-    </ul>
+    <%- include('partials/TasksDisplay') %>
 </body>
 
 <%- include('partials/footer') %> 
