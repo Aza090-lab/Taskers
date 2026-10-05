@@ -13,6 +13,7 @@ let tasks = [
 
 
 //====FUNÇÕES====
+//Tipos de busca
  //GetAllTasks => Pega tds tarefas
  const getAllTasks = () => tasks;
 
@@ -20,7 +21,6 @@ let tasks = [
 
  //GetTaskID => Busca pelo ID
  const getTaskId = (id) => tasks.find(task => task.id == id);
-
 
 
  //GetCompleted => Pega apenas as que foram completadas
@@ -44,6 +44,7 @@ let tasks = [
 
 
 
+ //Criação, Modificação e Deletar
  //CreateTask => Cria uma Task
  const createTask = (taskData) => {
     const newTask = {
@@ -56,7 +57,10 @@ let tasks = [
     return newTask;
  };
 
-
+//ClearAllTasks => Limpar todas as Tasks
+const clearAllTasks = () => {
+   tasks = []
+}
 
 
  //DeleteTaskID => Deleta uma Task pelo ID
@@ -66,10 +70,7 @@ const deleteTaskId = (id) => {
    return tasks.splice(Indice, 1)[0];
 }
 
-//ClearAllTasks => Limpar todas as Tasks
-const clearAllTasks = () => {
-   return taks = 0;
-}
+
 
 
 //EditTask => Modifica uma Task

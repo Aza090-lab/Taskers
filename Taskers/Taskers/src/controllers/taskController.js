@@ -51,7 +51,13 @@ const CreateTask = (req, res) => { //Cria um nv Task
    res.status(201).render("Tasks", {tasks});
 };
 
+const ClearAllTasks = (req, res) => {
+   taskModel.clearAllTasks();
+   const tasks = taskModel.getAllTasks();
 
+
+   res.status(201).render("Tasks", {tasks}); 
+}
 
 const deleteTaskId = (req, res) => { //Deleta uma TAsk pelo ID
    const { id } = req.body;
@@ -88,6 +94,7 @@ module.exports = {
 
    OpenCreateTask,
    CreateTask,
+   ClearAllTasks,
    deleteTaskId,
    editTask
 };
