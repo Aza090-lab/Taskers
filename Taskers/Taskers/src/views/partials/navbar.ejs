@@ -1,27 +1,24 @@
-<nav class="navbar navbar-expand-lg">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav"   style="display: inline-flex; ">
+<nav style="display: inline-flex; 
+    background-color: #5997c0; 
+    justify-content: space-between ;
+    height: 100px;
+    align-items: center;
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    width: 100%;">
 
-            <!--<div>
-                <button id="ConfirmSearchTask">🔍</button>
-                <input type="search" id="SearchTask">
-
-                <select id="SearchTaskOptions">
-                    <option>Tudo</option>
-                    <option>Concluidas</option>
-                    <option>Não Concluidas</option>
-                </select>
-            </div>-->
-
-            <div style="display: inline-flex;background-color: rgb(255, 255, 255);" >
-                <form action="/tasks" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas | </button> </form>
-                <form action="/tasks/completed" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas Completas | </button> </form>
-                <form action="/tasks/notcompleted" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas Não Completas | </button> </form>
-                <form action="/tasks/createmenu" method="GET"> <button type="submit" class="btn btn-outline-success" > | Criar Tarefa | </button> </form>
-                <form action="/tasks/clean" method="GET"> <button type="submit" class="btn btn-outline-success" > | Limpar | </button> </form>
-                
-            </div>
-            
-        </div>
+    <div style=" display: flex; flex-direction: row; justify-content: space-between;" >
+        <form action="/tasks" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas | </button> </form>
+        <form action="/tasks/completed" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas Completas | </button> </form>
+        <form action="/tasks/notcompleted" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas Não Completas | </button> </form>
+        <form action="/tasks/createmenu" method="GET"> <button type="submit" class="btn btn-outline-success" > | Criar Tarefa | </button> </form>
+        <form action="/tasks/clean" method="GET"> <button type="submit" class="btn btn-outline-success" > | Limpar | </button> </form>
     </div>
+
+    <form action="/tasks/task" method="GET"> 
+        <input type="text" name="title">
+        <button type="submit" class="btn btn-outline-success" > 🔍 </button> 
+    </form>
+
 </nav>
