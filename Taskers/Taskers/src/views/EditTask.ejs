@@ -1,0 +1,14 @@
+<%- include('partials/head') %> 
+
+<%- include('partials/header') %>
+<%- include('partials/navbar') %> 
+
+<body>
+    <form action="/tasks/changetitle" method="GET">
+        Título <input type="text" name="title">
+        <input type="text" name="id" style="display: none;"" value=<%= id %>>
+        <button type="submit">Confirmar</button>
+  </form>
+</body>
+
+<%- include('partials/footer') %>

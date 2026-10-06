@@ -24,8 +24,15 @@ let tasks = [
 
 
  //GetCompleted => Pega apenas as que foram completadas
- const getCompleted = () => {
-   tasks.find(item => item.completed === 1)
+ const getCompletedOrNot = (x) => {
+   let Result = [];
+   tasks.forEach(t => {
+      if (t.completed == x){
+         Result.push(t);
+      }
+   });
+
+   return(Result);
  };
 
 
@@ -65,11 +72,25 @@ const clearAllTasks = () => {
 }
 
 
+
  //DeleteTaskID => Deleta uma Task pelo ID
 const deleteTaskId = (id) => {
    const Indice = tasks.findIndex(task => task.id == id);
 
    tasks.splice(Indice, 1)[0];
+}
+
+
+
+const CompletTask = (id) => {
+   const Indice = tasks.findIndex(task => task.id == id);
+   const task = tasks[Indice];
+
+   if (task.completed == 0){
+      tasks[Indice].completed = 1
+   } else {
+      tasks[Indice].completed = 0
+   }
 }
 
 
@@ -92,17 +113,22 @@ const editTask = (Task) => {
    return(EditedTask);
 }
 
-const ChangeTitle = (id) => {
+const ChangeTitle = (id, NewTitle) => {
+   const Indice = tasks.findIndex(task => task.id == id);
+
+   tasks[Indice].title = NewTitle;
 }
 
 //====EXPORT====
 module.exports = {
    getAllTasks ,
    getTaskId ,
-   getCompleted ,
+   getCompletedOrNot ,
    deleteTaskId,
    clearAllTasks,
    createTask,
    editTask,
-   getTaskTitle
+   getTaskTitle,
+   CompletTask,
+   ChangeTitle
 }
