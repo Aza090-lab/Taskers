@@ -3,11 +3,14 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %> 
 
-<body>
-    <form action="/tasks/create" method="POST">
-        Título <input type="text" name="title">
-        <button type="submit">Confirmar</button>
-  </form>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh; height: 100%; margin: 0;">
+    <div style="flex: 1;">
+        <form action="/tasks/create" method="POST">
+            Título <input type="text" name="title">
+            <button type="submit">Confirmar</button>
+        </form>
+    </div>    
+    <%- include('partials/footer') %>
 </body>
 
-<%- include('partials/footer') %>

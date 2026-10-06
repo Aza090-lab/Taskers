@@ -3,7 +3,9 @@
 <%- include('partials/header') %>
 <%- include('partials/navbar') %> 
     
-    <body>
+    
+<body style="display: flex; flex-direction: column; min-height: 100vh; height: 100%; margin: 0;">
+    <div style="flex: 1;">
         <h2 style="color: rgb(35, 85, 73);">Olá, seja bem-vindo(a) ao Taskers, o seu novo gerenciador de tarefas favorito!</h2>
 
         <div>
@@ -20,7 +22,7 @@
         <h3>Então, está pronto para começar?</h3>
         <form action="/tasks" method="GET"> <button type="submit" class="btn btn-outline-success" > Testar Tasker </button> </form>
         </div>
-
+    </div>
+    <%- include('partials/footer') %> 
     </body>
 
-<%- include('partials/footer') %> 
