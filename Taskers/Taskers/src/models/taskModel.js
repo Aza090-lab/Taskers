@@ -37,7 +37,7 @@ let tasks = [
 
 
 
- //GetTasTitle => Busca pelo o title
+//GetTaskTitle => Busca pelo titulo
  const getTaskTitle = (title) => {
    let Result = [];
    tasks.forEach(t => {
@@ -68,30 +68,31 @@ let tasks = [
 
 //ClearAllTasks => Limpar todas as Tasks
 const clearAllTasks = () => {
-   tasks = []
+   tasks.length = 0;
+   return tasks;
 }
 
 
 
  //DeleteTaskID => Deleta uma Task pelo ID
 const deleteTaskId = (id) => {
-   const Indice = tasks.findIndex(task => task.id == id);
-
-   tasks.splice(Indice, 1)[0];
-}
-
-
-
-const CompletTask = (id) => {
-   const Indice = tasks.findIndex(task => task.id == id);
-   const task = tasks[Indice];
-
-   if (task.completed == 0){
-      tasks[Indice].completed = 1
-   } else {
-      tasks[Indice].completed = 0
+   const index = tasks.findIndex(task => task.id == id);
+   if (index !== -1) {
+      return tasks.splice(index, 1)[0];
    }
+   return null; 
 }
+
+
+//CompletTask => Marca uma Task como completa
+const CompletTask = (id) => {
+   const task = tasks.find(t => t.id == id);
+   if (task) {
+      task.completed = !task.completed;
+      return task;
+   }
+   return null;
+};
 
 
 
@@ -101,23 +102,31 @@ const editTask = (Task) => {
    const id = parseInt(Task.id);
 
    const TaskData = tasks.find(task => task.id == id);
-   const Indice = tasks.indexOf(TaskData);
+   
+   if (!TaskData) {
+      return null;
+   }
 
-   const EditedTask = {
-    id: TaskData.id,
-    title: Task.title || TaskData.title,
-    completed: Task.completed || false
-   };
+   if (Task.title != undefined){
+      TaskData.title = Task.title;
+   }
 
-   tasks[Indice] = EditedTask;
-   return(EditedTask);
-}
+   if (Task.completed != undefined){
+      TaskData.completed = Boolean(Task.completed);
+   }
 
+   return TaskData;
+};
+
+//altera o titulo da task
 const ChangeTitle = (id, NewTitle) => {
-   const Indice = tasks.findIndex(task => task.id == id);
-
-   tasks[Indice].title = NewTitle;
-}
+   const task = tasks.find(t => t.id == id);
+   if (task) {
+      task.title = NewTitle;
+      return task;
+   }
+   return null;
+};
 
 //====EXPORT====
 module.exports = {
