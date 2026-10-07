@@ -1,11 +1,12 @@
 <%- include('partials/head') %> 
-
-<%- include('partials/header') %>
-<%- include('partials/navbar') %> 
+<div style="background-color: #5690b6">
+    <%- include('partials/header') %>
+    <%- include('partials/navbar') %> 
+</div>
 
 
 <body style="display: flex; flex-direction: column; min-height: 100vh; height: 100%; margin: 0;">
-    <div style="flex: 1;">
+    <div style="flex: 1;margin: 20px;" >
         <form action="/tasks/create" method="POST">
             Título <input type="text" name="title">
             <button type="submit">Confirmar</button>

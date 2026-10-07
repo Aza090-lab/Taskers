@@ -35,19 +35,31 @@ let tasks = [
    return(Result);
  };
 
+//gettasktitle => busca pelo titulo
 
-
-//GetTaskTitle => Busca pelo titulo
  const getTaskTitle = (title) => {
    let Result = [];
    tasks.forEach(t => {
-      if (t.title.includes(title)){
+      if (t.title.toLowerCase().includes(title.toLowerCase())){
          Result.push(t);
       }
    });
 
    return(Result);
  };
+
+
+//GetTaskTitle => Busca pelo titulo
+ //const getTaskTitle = (title) => {
+   ///let Result = [];
+   //tasks.forEach(t => {
+     // if (t.title.includes(title)){
+       //  Result.push(t);
+     // }
+   //});
+
+   //return(Result);
+ //};
 
 
 

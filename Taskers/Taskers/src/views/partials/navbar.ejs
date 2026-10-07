@@ -8,15 +8,15 @@
     border: 0px; 
     width: 100%;">
 
-    <div style=" display: flex; flex-direction: row; justify-content: space-between;" >
-        <form action="/tasks" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas | </button> </form>
-        <form action="/tasks/completed" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas Completas | </button> </form>
-        <form action="/tasks/notcompleted" method="GET"> <button type="submit" class="btn btn-outline-success"> | Tarefas Não Completas | </button> </form>
-        <form action="/tasks/createmenu" method="GET"> <button type="submit" class="btn btn-outline-success" > | Criar Tarefa | </button> </form>
-        <form action="/tasks/clean" method="GET"> <button type="submit" class="btn btn-outline-success" > | Limpar | </button> </form>
+    <div style=" display: flex; flex-direction: row; justify-content: space-between;margin: 20px;gap: 10px;" >
+        <form action="/tasks" method="GET"> <button type="submit" class="btn btn-outline-light"> | Tarefas | </button> </form>
+        <form action="/tasks/completed" method="GET"> <button type="submit" class="btn btn-outline-light"> | Tarefas Completas | </button> </form>
+        <form action="/tasks/notcompleted" method="GET"> <button type="submit" class="btn btn-outline-light"> | Tarefas Não Completas | </button> </form>
+        <form action="/tasks/createmenu" method="GET"> <button type="submit" class="btn btn-outline-light" > | Criar Tarefa | </button> </form>
+        <form action="/tasks/clean" method="GET"> <button type="submit" class="btn btn-outline-light" > | Limpar | </button> </form>
     </div>
-
-    <form action="/tasks/task" method="GET"> 
+    
+    <form action="/tasks/task" method="GET;"> 
         <input type="text" name="title">
         <button type="submit" class="btn btn-outline-success" > 🔍 </button> 
     </form>
