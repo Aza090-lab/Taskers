@@ -5,11 +5,12 @@
 </div>
 
 
-<body style="display: flex; flex-direction: column; min-height: 100vh; height: 100%; margin: 0;">
+<body style="display: flex; flex-direction: column; min-height: 100vh; height: 100%; margin: 0; color: rgb(35, 85, 73);">
     <div style="flex: 1;margin: 20px;" >
+        <h3>Digite os dados da tarefa...</h3>
         <form action="/tasks/create" method="POST">
-            Título <input type="text" name="title">
-            <button type="submit">Confirmar</button>
+            Título <input type="text" name="title" style="border-radius: 5px;" placeholder="Digite o título da Tarefa">
+            <button type="submit" class="btn btn-outline-dark">Confirmar</button>
         </form>
     </div>    
     <%- include('partials/footer') %>

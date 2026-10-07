@@ -1,34 +1,33 @@
-<ul style="gap: 15px;list-style-type: none ; margin-right: 20px;">
+<ul style="gap: 15px; list-style-type: none ; margin-right: 20px; margin-top: 10px;">
     <% tasks.forEach(t => { %>
         <li>
             <% if (t.completed == 1) {%>
-                <div class="card border-success mb-3" style="width: 1fr; display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+                <div class="btn card border-success mb-3" style="width: 1fr; display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
                     <h3 style="color: green;"><%= t.title %></h3>
             <% } else {%>
-                <div class="card border-danger mb-3" style="width: 1fr; display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
+                <div class="btn card border-danger mb-3" style="width: 1fr; display: flex; flex-direction: row; gap: 5px; justify-content: space-between;">
                     <h3 style="color: red;"><%= t.title %></h3>
             <% } %>
 
                     <div style="display: inline-flex;gap: 10px; ">
                         <form action="/tasks/delete?_method=DELETE" method="POST"> 
                             <input type="text" name="id" style="display: none;"" value=<%= t.id %>>
-                            <button type="submit" class="btn btn-outline-success"> 🗑️ </button> 
+                            <button type="submit" class="btn btn-outline-dark"> 🗑️ </button> 
                         </form>
 
                         <form action="/tasks/complet" method="GET"> 
                             <input type="text" name="id" style="display: none;"" value=<%= t.id %>>
-                            <button type="submit" class="btn btn-outline-success">
                                 <% if (t.completed == 1) {%>
-                                    ❌
+                                    <button type="submit" class="btn btn-outline-danger">❌</button>
                                 <% } else {%>
-                                    ✔️
+                                    <button type="submit" class="btn btn-outline-success">✔️</button>
                                 <% } %>
-                            </button> 
+                            
                         </form>
 
                         <form action="/tasks/changetitlemenu" method="GET"> 
                             <input type="text" name="id" style="display: none;"" value=<%= t.id %>>
-                            <button type="submit" class="btn btn-outline-success"> ✏️ </button> 
+                            <button type="submit" class="btn btn-outline-warning"> ✏️ </button> 
                         </form>
                         </div>
                 </div>
